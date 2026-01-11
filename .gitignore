@@ -51,3 +51,7 @@ htmlcov/
 
 # Node (if applicable)
 node_modules/
+
+# Environment variables
+backend/.env
+.env
