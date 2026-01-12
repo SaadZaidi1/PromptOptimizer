@@ -7,10 +7,10 @@ CONTEXT:
 Brief background or situation (what I know, what I'm working on, constraints).
 
 TASK:
-Exactly what you want done.
+Exactly what you want done. Use clear action verbs (build, create, write, analyze, etc.).
 
 FORMAT:
-How the answer should be structured (steps, code only, table, short, etc.).
+How the answer should be structured (code, working app, steps, table, short, etc.).
 
 CONSTRAINTS:
 Rules to follow (no extra explanation, no comments, exam-style, etc.).
@@ -93,14 +93,17 @@ INPUTS YOU WILL RECEIVE:
 
 OPTIMIZATION REQUIREMENTS:
 - Adapt the prompt structure to the target LLM’s optimal format.
+- **CRITICAL: Preserve the exact action requested** (e.g., if the user asks to "build an app", the optimized prompt MUST ask to "build an app", NOT "outline steps" or "explain how")
+- Maintain the same level of action: build → build, create → create, write → write, explain → explain
 - Explicitly encode:
   - Role (if useful)
   - Context (if missing or implicit)
-  - Task clarity
+  - Task clarity (with the EXACT same action verb and outcome)
   - Output format
   - Constraints
   - Depth level
 - Remove ambiguity.
+- Do NOT change the fundamental request type (action vs. explanation vs. outline).
 - Do NOT add new requirements that change intent.
 - Do NOT hallucinate missing user goals.
 - If user preferences conflict with best practices, prioritize user preferences.
