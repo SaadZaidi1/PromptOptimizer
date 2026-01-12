@@ -4,7 +4,10 @@ import os
 from . import LLM_prompts
 import json
 
-MODEL = "GPT-4o-mini"
+# Load environment variables from .env file
+load_dotenv()
+
+MODEL = "gpt-4o-mini"
 OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 def optimize_prompt(user_prompt: str, target_llm: str, user_preferences: dict) -> str:
