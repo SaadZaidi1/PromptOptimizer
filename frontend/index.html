@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prompt Optimizer</h1>
+            <p>Optimize your prompts for different LLM models</p>
+        </header>
+
+        <main>
+            <div class="form-section">
+                <label for="llm-select">Target LLM:</label>
+                <select id="llm-select" class="llm-select">
+                    <option value="gpt">GPT</option>
+                    <option value="claude">Claude</option>
+                    <option value="gemini">Gemini</option>
+                </select>
+
+                <label for="user-prompt">Your Prompt:</label>
+                <textarea 
+                    id="user-prompt" 
+                    placeholder="Enter your prompt here..."
+                    rows="6"
+                ></textarea>
+
+                <button id="optimize-btn" class="optimize-btn">
+                    Optimize Prompt
+                </button>
+            </div>
+
+            <div class="result-section" id="result-section" style="display: none;">
+                <h3>Optimized Prompt</h3>
+                <div id="optimized-output" class="output-box"></div>
+                <button id="copy-btn" class="copy-btn">Copy to Clipboard</button>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Optimizing your prompt...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
